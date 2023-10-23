@@ -29,7 +29,7 @@
   #logo {
     display: block;
     width: 30%;
-    height: 30%;
+    height: 25%;
     margin: auto;
     padding: 10% 0 0;
     background-position: center;
@@ -66,7 +66,7 @@
     outline: none;
     height: 30px;
     line-height: 30px;
-    padding: 0 10px;
+    /* padding: 0 10px; */
     background-color: rgba(240, 240, 240, 1);
     -webkit-font-smoothing: antialiased;
   }
