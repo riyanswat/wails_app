@@ -1,0 +1,1 @@
+https://wails.io/docs/gettingstarted/development
