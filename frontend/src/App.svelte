@@ -21,7 +21,7 @@
       id="name"
       type="text"
     />
-    <button class="btn" on:click={greet}>Greet</button>
+    <button class="btn" on:click={greet}>greet</button>
   </div>
 </main>
 
@@ -36,6 +36,8 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-origin: content-box;
+    border: none;
+    border-radius: 50%;
   }
 
   .result {
@@ -53,11 +55,14 @@
     margin: 0 0 0 20px;
     padding: 0 8px;
     cursor: pointer;
+    font-variant: small-caps;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   .input-box .btn:hover {
-    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
-    color: #333333;
+    /* background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%); */
+    color: #ffffff;
+    background-color: #000811;
   }
 
   .input-box .input {
