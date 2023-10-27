@@ -1,5 +1,47 @@
 <script>
   import logo from "./assets/images/logo-universal.png";
+  import { GeneratePassword } from "../wailsjs/go/main/App.js";
+
+  let resultText = "Generated Password: ";
+  let length = 12; // Default password length
+  let includeLowercase = true;
+  let includeUppercase = true;
+  let includeNumbers = true;
+  let includeSpecialChars = true;
+
+  function generatePassword() {
+    GeneratePassword(
+      length,
+      includeLowercase,
+      includeUppercase,
+      includeNumbers,
+      includeSpecialChars
+    ).then((result) => (resultText = "Generated Password: " + result));
+  }
+</script>
+
+<main>
+  <img alt="Wails logo" id="logo" src={logo} />
+  <div class="result" id="result">{resultText}</div>
+  <div class="password-options">
+    <label for="length">Password Length:</label>
+    <input type="number" bind:value={length} min="4" max="64" />
+    <label for="includeLowercase">Include Lowercase:</label>
+    <input type="checkbox" bind:checked={includeLowercase} />
+    <label for="includeUppercase">Include Uppercase:</label>
+    <input type="checkbox" bind:checked={includeUppercase} />
+    <label for="includeNumbers">Include Numbers:</label>
+    <input type="checkbox" bind:checked={includeNumbers} />
+    <label for="includeSpecialChars">Include Special Characters:</label>
+    <input type="checkbox" bind:checked={includeSpecialChars} />
+  </div>
+  <button class="btn" on:click={generatePassword}>generate password</button>
+</main>
+
+<!-- ========================================================= -->
+
+<!-- <script>
+  import logo from "./assets/images/logo-universal.png";
   import { Greet } from "../wailsjs/go/main/App.js";
 
   let resultText = "Please enter your name below 👇";
@@ -84,5 +126,24 @@
   .input-box .input:focus {
     border: none;
     background-color: rgba(255, 255, 255, 1);
+  }
+</style> -->
+
+<style>
+  /* ... (your existing CSS) ... */
+
+  .password-options {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem auto;
+    justify-content: space-around;
+  }
+
+  .password-options label {
+    font-weight: bold;
+  }
+
+  .password-options input[type="number"] {
+    width: 50px;
   }
 </style>
